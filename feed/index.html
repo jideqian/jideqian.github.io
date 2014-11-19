@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jide Qian</title>
-    <link href="http://qianjiye.de/feed/" rel="self" />
+    <link href="http://www.geogebra.com.cn/feed/" rel="self" />
     <link href="http://qianjiye.de" />
-    <lastbuilddate>2014-11-18T00:31:43+08:00</lastbuilddate>
+    <lastbuilddate>2014-11-19T09:47:31+08:00</lastbuilddate>
     <webmaster>ccf.developer@gmail.com</webmaster>
     
     <item>
       <title>机器学习: 神经网络</title>
-      <link href="http://qianjiye.de/2014/11/machine-learning-neural-networks" />
+      <link href="http://www.geogebra.com.cn/2014/11/machine-learning-neural-networks" />
       <pubdate>2014-11-09T11:09:00+08:00</pubdate>
       <author>Jide Qian</author>
-      <guid>http://qianjiye.de/2014/11/machine-learning-neural-networks</guid>
+      <guid>http://www.geogebra.com.cn/2014/11/machine-learning-neural-networks</guid>
       <content:encoded>&lt;![CDATA[<h2 id="section">简介</h2>
 
 <div class="image_line" id="figure-1"><div class="image_card"><a href="/assets/images/2014-10-21-neural-networks_1.png"><img src="/assets/images/2014-10-21-neural-networks_1.png" alt="神经网络结构" /></a><div class="caption">Figure 1:  神经网络结构 [<a href="/assets/images/2014-10-21-neural-networks_1.png">PNG</a>]</div></div></div>
@@ -155,19 +155,39 @@ J(\Theta) = &amp;-\frac{1}{m}\sum_{i=1}^{m}\sum_{k=1}^{K}\left(y_k^{(i)}\log \le
 
 <h2 id="section-6">应用</h2>
 
-<p>卡内基梅隆大学基于神经网络的自动驾驶系统<a href="#pomerleau_alvinn_1989">[6]</a>，一些Matlab代码和数据还可以从<a href="http://www.cs.cmu.edu/afs/cs/academic/class/15782-f06/matlab/alvinn/">这里</a>找到。</p>
+<p>卡内基梅隆大学基于神经网络的自动驾驶系统<a href="#pomerleau_alvinn_1989">[5]</a>，一些Matlab代码和数据还可以从<a href="http://www.cs.cmu.edu/afs/cs/academic/class/15782-f06/matlab/alvinn/">这里</a>找到。</p>
 
 <h2 id="section-7">参考资料</h2>
 
-<ol class="bibliography"><li><span id="ng_ml_nnr_2014">[1]A. Ng, “Neural Networks: Representation.” Coursera, 2014 [Online]. Available at: https://class.coursera.org/ml-007</span>
+<ol class="bibliography"><li><span id="ng_ml_nnr_2014">[1]A. Ng, “Neural Networks: Representation.” Coursera, 2014.</span>
+
+[<a href="https://class.coursera.org/ml-007">Online</a>]
+
+
 </li>
-<li><span id="ng_ml_nnl_2014">[2]A. Ng, “Neural Networks: Learning.” Coursera, 2014 [Online]. Available at: https://class.coursera.org/ml-007</span>
+<li><span id="ng_ml_nnl_2014">[2]A. Ng, “Neural Networks: Learning.” Coursera, 2014.</span>
+
+[<a href="https://class.coursera.org/ml-007">Online</a>]
+
+
 </li>
-<li><span id="nielsen_nndl_2014">[3]M. A. Nielsen, <i>Neural Networks and Deep Learning</i>. Determination Press, 2014 [Online]. Available at: http://neuralnetworksanddeeplearning.com</span>
+<li><span id="nielsen_nndl_2014">[3]M. A. Nielsen, <i>Neural Networks and Deep Learning</i>. Determination Press, 2014.</span>
+
+[<a href="http://neuralnetworksanddeeplearning.com">Online</a>]
+
+
 </li>
-<li><span id="ng_ml_nnl_pe_2014">[4]A. Ng, “Programming Exercise 4: Neural Networks Learning.” Coursera, 2014 [Online]. Available at: https://class.coursera.org/ml-007</span>
+<li><span id="ng_ml_nnl_pe_2014">[4]A. Ng, “Programming Exercise 4: Neural Networks Learning.” Coursera, 2014.</span>
+
+[<a href="https://class.coursera.org/ml-007">Online</a>]
+
+
 </li>
-<li><span id="pomerleau_alvinn_1989">[5]D. A. Pomerleau, “ALVINN, an autonomous land vehicle in a neural network,” Carnegie Mellon University, 1989 [Online]. Available at: http://repository.cmu.edu/cgi/viewcontent.cgi?article=2874&amp;context=compsci</span>
+<li><span id="pomerleau_alvinn_1989">[5]D. A. Pomerleau, “ALVINN, an autonomous land vehicle in a neural network,” Carnegie Mellon University, 1989.</span>
+
+[<a href="http://repository.cmu.edu/cgi/viewcontent.cgi?article=2874&amp;context=compsci">Online</a>]
+
+
 </li></ol>
 
 <h3 id="section-8">脚注</h3>
@@ -180,7 +200,7 @@ J(\Theta) = &amp;-\frac{1}{m}\sum_{i=1}^{m}\sum_{k=1}^{K}\left(y_k^{(i)}\log \le
       <p>这两篇博客（<a href="http://blog.csdn.net/abcjennifer/article/details/7758797">1</a>、<a href="http://blog.csdn.net/sheng_ai/article/details/19931347">2</a>）也给出了BP算法的推导过程，但是采用了形如<a href="/2014/10/machine-learning-linear-regression/#mjx-eqn-eqcost_function_linear_regression">线性回归的代价函数</a>。 <a href="#fnref:parameter_estimation" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:initial_theta">
-      <p>不可将$\Theta_{ij}^{(l)}$初始化为$0$。若初始化为$0$，每层的所有神经元都一样<a href="#ng_ml_nnl_2014">[4, Pp. 25-26]</a>，每层只能学习到一种特征。$\epsilon$的取值方案参考课程习题脚注<a href="#ng_ml_nnl_pe_2014">[5, P. 7]</a>或<a href="https://share.coursera.org/wiki/index.php/ML:Neural_Networks:_Learning">课程Wiki</a>。 <a href="#fnref:initial_theta" class="reversefootnote">&#8617;</a></p>
+      <p>不可将$\Theta_{ij}^{(l)}$初始化为$0$。若初始化为$0$，每层的所有神经元都一样<a href="#ng_ml_nnl_2014">[2, Pp. 25-26]</a>，每层只能学习到一种特征。$\epsilon$的取值方案参考课程习题脚注<a href="#ng_ml_nnl_pe_2014">[4, P. 7]</a>或<a href="https://share.coursera.org/wiki/index.php/ML:Neural_Networks:_Learning">课程Wiki</a>。 <a href="#fnref:initial_theta" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:vector_update_Delta">
       <p>更新的向量形式$\Delta^{(l)} := \Delta^{(l)} + \delta^{(l+1)}\left(\mathbf a^{(l)}\right)^T$。这一步是怎么来的？有何意义？ <a href="#fnref:vector_update_Delta" class="reversefootnote">&#8617;</a></p>
@@ -192,10 +212,10 @@ J(\Theta) = &amp;-\frac{1}{m}\sum_{i=1}^{m}\sum_{k=1}^{K}\left(y_k^{(i)}\log \le
     
     <item>
       <title>CSS Essential</title>
-      <link href="http://qianjiye.de/2014/10/css-essential" />
+      <link href="http://www.geogebra.com.cn/2014/10/css-essential" />
       <pubdate>2014-10-25T15:37:41+08:00</pubdate>
       <author>Jide Qian</author>
-      <guid>http://qianjiye.de/2014/10/css-essential</guid>
+      <guid>http://www.geogebra.com.cn/2014/10/css-essential</guid>
       <content:encoded>&lt;![CDATA[<blockquote>
   <h4 id="what-is-css">What is CSS?</h4>
   <hr />
@@ -890,10 +910,10 @@ The flower of lily of the valley is like tinkler, be born at spending cauline to
     
     <item>
       <title>机器学习: 感知器算法</title>
-      <link href="http://qianjiye.de/2014/10/machine-learning-perceptron-learning-algorithm" />
+      <link href="http://www.geogebra.com.cn/2014/10/machine-learning-perceptron-learning-algorithm" />
       <pubdate>2014-10-21T18:09:00+08:00</pubdate>
       <author>Jide Qian</author>
-      <guid>http://qianjiye.de/2014/10/machine-learning-perceptron-learning-algorithm</guid>
+      <guid>http://www.geogebra.com.cn/2014/10/machine-learning-perceptron-learning-algorithm</guid>
       <content:encoded>&lt;![CDATA[<h2 id="section">问题描述</h2>
 
 <p>对于线性二分类问题<br />
@@ -1042,10 +1062,10 @@ R^2 = \max_n \|\mathbf x_n\|^2,~~\rho=\min_n y_n\frac{\mathbf w_f^T}{\|\mathbf w
     
     <item>
       <title>机器学习: 正则化</title>
-      <link href="http://qianjiye.de/2014/10/machine-learning-regularization" />
+      <link href="http://www.geogebra.com.cn/2014/10/machine-learning-regularization" />
       <pubdate>2014-10-20T00:00:00+08:00</pubdate>
       <author>Jide Qian</author>
-      <guid>http://qianjiye.de/2014/10/machine-learning-regularization</guid>
+      <guid>http://www.geogebra.com.cn/2014/10/machine-learning-regularization</guid>
       <content:encoded>&lt;![CDATA[<h2 id="section">为什么需要正则化</h2>
 
 <p>过拟合（overfitting）是指模型可以在训练集上表现出色，在新数据上性能却很差。解决过拟合问题的方法：</p>
@@ -1177,17 +1197,21 @@ J(\theta)  = &amp;-\frac{1}{m}\sum_{i=1}^{m}\left(y^{(i)}\log h_\theta\left(x^{(
 
 <h2 id="section-8">参考资料</h2>
 
-<ol class="bibliography"><li><span id="ng_ml_r_2014">[1]A. Ng, “Regularization: The problem of overfitting.” Coursera, 2014 [Online]. Available at: https://class.coursera.org/ml-007</span>
+<ol class="bibliography"><li><span id="ng_ml_r_2014">[1]A. Ng, “Regularization: The problem of overfitting.” Coursera, 2014.</span>
+
+[<a href="https://class.coursera.org/ml-007">Online</a>]
+
+
 </li></ol>
 ]]&gt;</content:encoded>
     </item>
     
     <item>
       <title>机器学习: 多分类问题</title>
-      <link href="http://qianjiye.de/2014/10/machine-learning-multiple-classification" />
+      <link href="http://www.geogebra.com.cn/2014/10/machine-learning-multiple-classification" />
       <pubdate>2014-10-20T00:00:00+08:00</pubdate>
       <author>Jide Qian</author>
-      <guid>http://qianjiye.de/2014/10/machine-learning-multiple-classification</guid>
+      <guid>http://www.geogebra.com.cn/2014/10/machine-learning-multiple-classification</guid>
       <content:encoded>&lt;![CDATA[<h2 id="section">问题描述</h2>
 
 <p>许多分类器主要是为了解决二分类问题，对只有1和0两个类别标签对数据分类，比如Logistic回归和SVM。多分类问题是对两个以上类别标签的数据集分类。</p>
@@ -1232,9 +1256,17 @@ J(\theta)  = &amp;-\frac{1}{m}\sum_{i=1}^{m}\left(y^{(i)}\log h_\theta\left(x^{(
 
 <h2 id="section-4">参考资料</h2>
 
-<ol class="bibliography"><li><span id="ng_ml_lr_2014">[1]A. Ng, “Logistic Regression.” Coursera, 2014 [Online]. Available at: https://class.coursera.org/ml-007</span>
+<ol class="bibliography"><li><span id="ng_ml_lr_2014">[1]A. Ng, “Logistic Regression.” Coursera, 2014.</span>
+
+[<a href="https://class.coursera.org/ml-007">Online</a>]
+
+
 </li>
-<li><span id="ng_ml_nnl_2014">[2]A. Ng, “Neural Networks: Learning.” Coursera, 2014 [Online]. Available at: https://class.coursera.org/ml-007</span>
+<li><span id="ng_ml_nnl_2014">[2]A. Ng, “Neural Networks: Learning.” Coursera, 2014.</span>
+
+[<a href="https://class.coursera.org/ml-007">Online</a>]
+
+
 </li></ol>
 
 <h3 id="section-5">脚注</h3>
@@ -1250,10 +1282,10 @@ J(\theta)  = &amp;-\frac{1}{m}\sum_{i=1}^{m}\left(y^{(i)}\log h_\theta\left(x^{(
     
     <item>
       <title>机器学习: Logistic回归</title>
-      <link href="http://qianjiye.de/2014/10/machine-learning-logistic-regression" />
+      <link href="http://www.geogebra.com.cn/2014/10/machine-learning-logistic-regression" />
       <pubdate>2014-10-19T00:00:00+08:00</pubdate>
       <author>Jide Qian</author>
-      <guid>http://qianjiye.de/2014/10/machine-learning-logistic-regression</guid>
+      <guid>http://www.geogebra.com.cn/2014/10/machine-learning-logistic-regression</guid>
       <content:encoded>&lt;![CDATA[<h2 id="section">模型介绍</h2>
 
 <div class="image_line">
@@ -1419,10 +1451,10 @@ J(\theta)<br />
     
     <item>
       <title>机器学习: 线性回归</title>
-      <link href="http://qianjiye.de/2014/10/machine-learning-linear-regression" />
+      <link href="http://www.geogebra.com.cn/2014/10/machine-learning-linear-regression" />
       <pubdate>2014-10-19T00:00:00+08:00</pubdate>
       <author>Jide Qian</author>
-      <guid>http://qianjiye.de/2014/10/machine-learning-linear-regression</guid>
+      <guid>http://www.geogebra.com.cn/2014/10/machine-learning-linear-regression</guid>
       <content:encoded>&lt;![CDATA[<h2 id="section">模型介绍</h2>
 
 <p><img src="/assets/images/2014-10-19-linear_regression_0.png" alt="linear regression" /></p>
@@ -1568,10 +1600,10 @@ h_\theta(x) = \theta^Tx = \theta_0x_0 + \theta_1x + \theta_2x^2 ＋ \theta_3x^3 
     
     <item>
       <title>基于Jekyll的GitHub建站指南</title>
-      <link href="http://qianjiye.de/2012/07/host-your-pages-at-github-using-jekyll" />
+      <link href="http://www.geogebra.com.cn/2012/07/host-your-pages-at-github-using-jekyll" />
       <pubdate>2012-07-01T00:00:00+08:00</pubdate>
       <author>Jide Qian</author>
-      <guid>http://qianjiye.de/2012/07/host-your-pages-at-github-using-jekyll</guid>
+      <guid>http://www.geogebra.com.cn/2012/07/host-your-pages-at-github-using-jekyll</guid>
       <content:encoded>&lt;![CDATA[<p>简介：本文主要介绍利用jekyll在github上搭建站点的方法与原理。</p>
 
 <p><span id="jekyll-and-github"></span></p>
@@ -1742,10 +1774,10 @@ e^x = \sum\_{n=0}^\infty \frac{x^n}{n!} = \lim\_{n\rightarrow\infty} (1+x/n)^n
     
     <item>
       <title>李纯明博士报告安排</title>
-      <link href="http://qianjiye.de/2012/06/lab-notice" />
+      <link href="http://www.geogebra.com.cn/2012/06/lab-notice" />
       <pubdate>2012-06-27T00:00:00+08:00</pubdate>
       <author>Jide Qian</author>
-      <guid>http://qianjiye.de/2012/06/lab-notice</guid>
+      <guid>http://www.geogebra.com.cn/2012/06/lab-notice</guid>
       <content:encoded>&lt;![CDATA[<blockquote>
 
   <ol>
@@ -1817,10 +1849,10 @@ e^x = \sum\_{n=0}^\infty \frac{x^n}{n!} = \lim\_{n\rightarrow\infty} (1+x/n)^n
     
     <item>
       <title>外国诗歌赏析</title>
-      <link href="http://qianjiye.de/2011/10/foreign-poems" />
+      <link href="http://www.geogebra.com.cn/2011/10/foreign-poems" />
       <pubdate>2011-10-08T23:09:00+08:00</pubdate>
       <author>Jide Qian</author>
-      <guid>http://qianjiye.de/2011/10/foreign-poems</guid>
+      <guid>http://www.geogebra.com.cn/2011/10/foreign-poems</guid>
       <content:encoded>&lt;![CDATA[<h4 id="section">目录：</h4>
 <ol>
   <li><a href="#普希金">普希金</a>：纪念碑</li>
