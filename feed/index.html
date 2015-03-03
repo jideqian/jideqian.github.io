@@ -4,7 +4,7 @@
     <title>Jide Qian</title>
     <link href="http://www.geogebra.com.cn/feed/" rel="self" />
     <link href="http://qianjiye.de" />
-    <lastbuilddate>2015-03-02T11:56:25+08:00</lastbuilddate>
+    <lastbuilddate>2015-03-03T12:17:07+08:00</lastbuilddate>
     <webmaster>ccf.developer@gmail.com</webmaster>
     
     <item>
@@ -13,9 +13,47 @@
       <pubdate>2015-03-02T00:00:00+08:00</pubdate>
       <author>Jide Qian</author>
       <guid>http://www.geogebra.com.cn/2015/03/LCD</guid>
-      <content:encoded>&lt;![CDATA[<h2 id="section">主要分成如下部分</h2>
-<p>###part 1:
-###part 2:</p>
+      <content:encoded>&lt;![CDATA[<h2 id="section">主要内容</h2>
+<ol>
+  <li>计算发光LCD单元之间水平和垂直间距px,py</li>
+  <li>通过临域差分和差分阈值参数查找缺陷</li>
+  <li>局部均值算法寻找边缘缺陷点</li>
+</ol>
+
+<h2 id="pxpy">px,py计算</h2>
+<p>首先，对于任意一个新的检测型号，我们需要获取这类型屏幕的LCD元件之间px,py距离参数，这是这个检测算法的关键，作者分别计算水平差分和、垂直差分和，然后得到差分和的与px、py的关系，分析得到参数px、py。
+原文计算方法如下：
+\begin{equation}
+\begin{aligned}
+diff_x = \sum_{px=1}^{n/2}\left( I_{x,y} - I_{x+px,y} \right) \newline
+diff_y = \sum_{py=1}^{n/2}\left( I_{x,y} - I_{x,y+py} \right) .
+\end{aligned}
+\end{equation}
+得到积分和如下：</p>
+
+<div class="image_line">
+<div class="image_card">
+<img src="/assets/images/2015-03-02-LCD_1.png" alt="差分和示意图" />
+<div class="caption">差分和示意图</div>
+</div>
+</div>
+
+<p>获取到屏幕的px、py参数，我们就可以通过对图像的屏幕区域进行缺陷检测，对于屏幕图像采用四领域的差分运算，</p>
+
+<p>\begin{equation}
+\begin{aligned}
+D_{x,y} = \left| 4I_{x,y} - \left( _{+I_{x,y+py}+I_{x,y-py}}^{I_{x+px,y}\ +\ \ I_{x-px,y}} \right) \right|
+\end{aligned}
+\end{equation}</p>
+
+<p>然后对差分图进行归一化处理，最后通过阈值$T$对归一化图像进行判断是否为缺陷。参数$T$是决定检测精确度的关键，这是一个需要通过大量试验得到的参数，作者给出的是$0.4\leq T\leq0.5$。</p>
+
+<h2 id="section-1">边缘点缺陷查找</h2>
+
+<h2 id="section-2">参考文献</h2>
+<ol>
+  <li><a href="http://pan.baidu.com/s/1pnTBS">Inspection of detect on LCD panel using local mean algorithm based on similarity</a></li>
+</ol>
 ]]&gt;</content:encoded>
     </item>
     
