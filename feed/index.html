@@ -4,7 +4,7 @@
     <title>Jide Qian</title>
     <link href="http://www.geogebra.com.cn/feed/" rel="self" />
     <link href="http://qianjiye.de" />
-    <lastbuilddate>2015-03-03T23:00:47+08:00</lastbuilddate>
+    <lastbuilddate>2015-03-03T23:03:28+08:00</lastbuilddate>
     <webmaster>ccf.developer@gmail.com</webmaster>
     
     <item>
@@ -14,11 +14,14 @@
       <author>Jide Qian</author>
       <guid>http://www.geogebra.com.cn/2015/03/LCD</guid>
       <content:encoded>&lt;![CDATA[<h2 id="section">论文链接</h2>
-<p><a href="http://pan.baidu.com/s/1pnTBS">Inspection of detect on LCD panel using local mean algorithm based on similarity</a>
-##主要内容
-1. 计算发光LCD单元之间水平和垂直间距px,py
-2. 通过临域差分和差分阈值参数查找缺陷
-3. 局部均值算法寻找边缘缺陷点</p>
+<p><a href="http://pan.baidu.com/s/1pnTBS">Inspection of detect on LCD panel using local mean algorithm based on similarity</a></p>
+
+<h2 id="section-1">主要内容</h2>
+<ol>
+  <li>计算发光LCD单元之间水平和垂直间距px,py</li>
+  <li>通过临域差分和差分阈值参数查找缺陷</li>
+  <li>局部均值算法寻找边缘缺陷点</li>
+</ol>
 
 <h2 id="pxpy">px,py计算</h2>
 <p>首先，对于任意一个新的检测型号，我们需要获取这类型屏幕的LCD元件之间px,py距离参数，这是这个检测算法的关键，作者分别计算水平差分和、垂直差分和，然后得到差分和的与px、py的关系，分析得到参数px、py。
@@ -48,21 +51,26 @@ D_{x,y} = \left| 4I_{x,y} - \left( _{+I_{x,y+py}+I_{x,y-py}}^{I_{x+px,y}\ +\ \ I
 
 <p>然后对差分图进行归一化处理，最后通过阈值$T$对归一化图像进行判断是否为缺陷。参数$T$是决定检测精确度的关键，这是一个需要通过大量试验得到的参数，作者给出的是$0.4\leq T\leq0.5$。</p>
 
-<h2 id="section-1">局部均值缺陷检测算法</h2>
-<p>首先，采用最小二乘法进行屏幕边界的定位；然后，通过局部均值算法进行缺陷检测，具体步骤如下:
-&gt;1. 遍历边缘点$I_{x,y}$，以当前点为中心选取大小为$N<em>N$窗口$R_w$
-&gt;2. 遍历$R_w$的临域，同样选择大小为$N</em>N$的窗口$S_w$
-&gt;3. 计算$R_w$与$S_w$的相似度，计算方法如下：
-&gt;\begin{equation}
-&gt;\begin{aligned}
-&gt;\sum_{i=0}^{N}\sum_{j=0}^{N}\left( | R_{i,j} - S_{i,j} | \leq \Delta I\right) 
-&gt;\end{aligned}
-&gt;\end{equation}
-&gt;4. 如果存在相似度大于$P_w$的窗口$S_w$,结束遍历,$R_w$为正常点，否则认为当前窗口$R_w$为缺陷</p>
+<h2 id="section-2">局部均值缺陷检测算法</h2>
+<p>首先，采用最小二乘法进行屏幕边界的定位；然后，通过局部均值算法进行缺陷检测，具体步骤如下:</p>
+
+<blockquote>
+  <ol>
+    <li>遍历边缘点$I_{x,y}$，以当前点为中心选取大小为$N*N$窗口$R_w$</li>
+    <li>遍历$R_w$的临域，同样选择大小为$N*N$的窗口$S_w$</li>
+    <li>计算$R_w$与$S_w$的相似度，计算方法如下：
+\begin{equation}
+\begin{aligned}
+\sum_{i=0}^{N}\sum_{j=0}^{N}\left( | R_{i,j} - S_{i,j} | \leq \Delta I\right) 
+\end{aligned}
+\end{equation}</li>
+    <li>如果存在相似度大于$P_w$的窗口$S_w$,结束遍历,$R_w$为正常点，否则认为当前窗口$R_w$为缺陷</li>
+  </ol>
+</blockquote>
 
 <p>说明：$\Delta I$:允许存在的差分误差。</p>
 
-<h2 id="section-2">思考</h2>
+<h2 id="section-3">思考</h2>
 <ol>
   <li>局部均值算法中，相对于$R_w$的对比临域$S_w$选取范围没有说清楚。</li>
   <li>主要参数$P_w$、$N$是一个经验值，对于不同的检测型号很可能不一样</li>
