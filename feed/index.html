@@ -4,8 +4,133 @@
     <title>Jide Qian</title>
     <link href="http://www.geogebra.com.cn/feed/" rel="self" />
     <link href="http://qianjiye.de" />
-    <lastbuilddate>2015-03-03T23:03:28+08:00</lastbuilddate>
+    <lastbuilddate>2015-06-23T22:22:01+08:00</lastbuilddate>
     <webmaster>ccf.developer@gmail.com</webmaster>
+    
+    <item>
+      <title>OpenCV(一)</title>
+      <link href="http://www.geogebra.com.cn/2015/06/OpenCV(%E4%B8%80)" />
+      <pubdate>2015-06-18T00:00:00+08:00</pubdate>
+      <author>Jide Qian</author>
+      <guid>http://www.geogebra.com.cn/2015/06/OpenCV(一)</guid>
+      <content:encoded>&lt;![CDATA[<h2 id="section">功能模块介绍</h2>
+<p>$Highgui:$包含图片和视频的读写显示函数，视频编码解码，还有图形界面鼠标用户交互函数.</p>
+
+<p>$Core:$基本数据结构、动态数据结构、绘图函数、数组操作相关函数、辅助功能与系统函数和红定义、与OpenGL的互操作。</p>
+
+<p>$Imgproc:$图像滤波、图像几何变换与转换、直方图相关、结构分析与形状描述、运动分析和对象跟踪、特征检测、目标检测等。</p>
+
+<p>$Features2d:$包含特征点检测器、描述符提取器、特征点匹配框架、关键点绘制函数和匹配功能绘制函数。</p>
+
+<p>$Objdetect:$包含了对象检测函数，比如脸部和人的检测.</p>
+
+<p>$Calib3d:$包含了相机矫正、双视角的几何估计和立体函数.</p>
+
+<p>$Video:$包含了动作估计，特征跟踪和前景提取函数与类.</p>
+]]&gt;</content:encoded>
+    </item>
+    
+    <item>
+      <title>Machine Learning(一)</title>
+      <link href="http://www.geogebra.com.cn/2015/06/Machine-Learning" />
+      <pubdate>2015-06-10T00:00:00+08:00</pubdate>
+      <author>Jide Qian</author>
+      <guid>http://www.geogebra.com.cn/2015/06/Machine-Learning</guid>
+      <content:encoded>&lt;![CDATA[<h2 id="section">学习分类</h2>
+
+<p><strong>有监督学习:</strong>回归、分类</p>
+
+<p><strong>无监督学习:</strong>异常检测、聚类</p>
+
+<h2 id="section-1">学习方法</h2>
+
+<p><strong>判别式分类:</strong>计算后验概率 
+$p(y|x)=\frac{p(x,y)}{p(x)}＝\frac{p(x,y)}{\sum_{y}{p(x,y)}}\varpropto p(x,y)$</p>
+
+<p><strong>生成式分类:</strong>计算生成概率 $p(\textbf{x},y)$.</p>
+
+<p><strong>关系：</strong>相对于后验概率
+$p(y|x)$，数据生成概率 $p(x,y)$ 的计算时解决一般性(求解更加困难)的问题。然后，进行模式识别时只需计算出后验概率就足够了。在解决实际问题时，经常能够获得有关数据生成概率的一些先验知识。</p>
+]]&gt;</content:encoded>
+    </item>
+    
+    <item>
+      <title>基于ICA方法的低对比度表面图像缺陷检测</title>
+      <link href="http://www.geogebra.com.cn/2015/05/Low-constrast" />
+      <pubdate>2015-05-19T00:00:00+08:00</pubdate>
+      <author>Jide Qian</author>
+      <guid>http://www.geogebra.com.cn/2015/05/Low-constrast</guid>
+      <content:encoded>&lt;![CDATA[<h2 id="section">论文链接</h2>
+<p><a href="http://pan.baidu.com/s/1gd6HMIf">An independent component analysis-based filter design for defect detection in low-contrast surface images 
+(2006,Pattern Recognition)</a> </p>
+
+<h2 id="section-1">摘要</h2>
+
+<blockquote>
+  <p>©在这篇文章中，我们提出一个用卷积滤波器检测低对比度均匀图像表面中的小缺陷，并重点关注在LCD制造中的背光板和玻璃基板中的缺陷检测应用。成像表明在低对比度中图像中的缺陷与邻域没有明显的强度差异，更糟糕的是采集到的图像有不均匀的亮度。所有的这些情况使得在低对比度图像中的缺陷检测变得极端困难。<br />
+©在这项研究中，我们提出了基于受约束的独立成分分析(ICA)模型设计一个最优滤波器，该卷积滤波器能够对没有噪声的背景光强产生最明显的响应。事先结合ICA模型约束所有没有缺陷的训练图像块初始像素值边界在一个控制限制允许的小间隔内。在这个检测过程中，相同的控制约束参数也被用在设置使对在完美的区域的像素发出脉冲响应的阈值在控制范围，同样在缺陷区域的响应阈值超越了这个控制范围。一个随机进化计算粒子群算法(PSO)被应用在去解决约束ICA模型。实验结果表明我们提出的模型能够有效的检测低对比度的背光板和玻璃基板图像中的小缺陷。</p>
+</blockquote>
+
+<ol>
+  <li>主要检测对象：背光板、LCD制造中的玻璃基板</li>
+  <li>检测对象成像特点：整幅图像对比度低、画面不均匀(边缘漏光). </li>
+  <li></li>
+</ol>
+
+<h2 id="section-2">背景</h2>
+
+<h3 id="section-3">需求</h3>
+
+<h3 id="section-4">现有算法</h3>
+<ol>
+  <li>基于局部区域的统计特性的自适应的多级别阈值的点缺陷分割(2004)。<sup id="fnref:class_label_method_1"><a href="#fn:class_label_method_1" class="footnote">1</a></sup></li>
+  <li>用遗传算法提取亮度不均匀图像中的连续边缘，实现在噪声中检测缺陷(1999)。 <sup id="fnref:class_label_method_2"><a href="#fn:class_label_method_2" class="footnote">2</a></sup></li>
+  <li>采用亮度传感器而不是CCD相机作为信号信息采集设备，利用差方分析和指数加权移动平均技术去确定区域缺陷的存在(2005)。<sup id="fnref:class_label_method_3"><a href="#fn:class_label_method_3" class="footnote">3</a></sup></li>
+  <li>建立一个无缺陷的标准参考模板，和待检测检测图像通过比较背景亮度分布进行缺陷查找(1992)。<sup id="fnref:class_label_method_4"><a href="#fn:class_label_method_4" class="footnote">4</a></sup></li>
+  <li>应用低阶多项式数据拟合估计背景，减去估计的背景；然后找到最佳的二值化分割阈值，通过中值滤波和形态学关和开运算去处噪声。<strong>优点</strong>:效果比较理想。<strong>缺点</strong>:计算量巨大（消除一个像素需要递归遍历整幅图像），实用价值不高，急需改进提高。(2004)<sup id="fnref:class_label_method_5"><a href="#fn:class_label_method_5" class="footnote">5</a></sup></li>
+</ol>
+
+<h3 id="icaindependent-components-analysis">ICA(Independent components analysis)</h3>
+<blockquote>
+  <p>ICA:一种利用统计原理进行计算的方法,它是一个线性变换,把数据或信号分离成统计独立的非高斯的信号源的线性组合。(<strong>最重要的假设就是信号源统计独立</strong>)</p>
+
+  <p>ICA已有的一些应用：</p>
+
+  <ul>
+    <li>医学型号处理(EEG、fMRI、MEG等)</li>
+    <li>声音信号处理(鸡尾酒会问题)</li>
+    <li>人脸识别、纹理分析、图像去噪等</li>
+  </ul>
+</blockquote>
+
+<h3 id="section-5">难点</h3>
+<ol>
+  <li>局部的不均匀亮度也是平滑的改变没有清晰的边缘，不能应用基于梯度的缺陷检测方法</li>
+  <li>检测对象的低对比度很难应用阈值分割方法</li>
+</ol>
+
+<h2 id="section-6">参考文献</h2>
+<div class="footnotes">
+  <ol>
+    <li id="fn:class_label_method_1">
+      <p>Detection of spot-type defects on liquid crystal display modules <a href="#fnref:class_label_method_1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:class_label_method_2">
+      <p>Boundary extraction of brightness unevenness on LCD display using genetic algorithm based on perceptive grouping factors. <a href="#fnref:class_label_method_2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:class_label_method_3">
+      <p>Liquid crystal display surface uniformity defect inspection using analysis of variance and exponentially weighted moving average techniques. <a href="#fnref:class_label_method_3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:class_label_method_4">
+      <p>Automatic vision system for final test of liquid crystal displays.(<a href="http://anton.treskunov.net/publications/IEEE92.pdf">PDF</a>) <a href="#fnref:class_label_method_4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:class_label_method_5">
+      <p>Automatic detection of region-mura defect in TFT-LCD. <a href="#fnref:class_label_method_5" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+]]&gt;</content:encoded>
+    </item>
     
     <item>
       <title>基于局部均值的屏幕缺陷检测算法</title>
@@ -1517,404 +1642,6 @@ J(\theta)<br />
   <li><a href="https://class.coursera.org/ml-007">Machine Learning （Andrew Ng）</a>  </li>
   <li><a href="http://en.wikipedia.org/wiki/Logistic_regression">Wikipedia: Logistic regression</a></li>
 </ol>
-
-]]&gt;</content:encoded>
-    </item>
-    
-    <item>
-      <title>机器学习: 线性回归</title>
-      <link href="http://www.geogebra.com.cn/2014/10/machine-learning-linear-regression" />
-      <pubdate>2014-10-19T00:00:00+08:00</pubdate>
-      <author>Jide Qian</author>
-      <guid>http://www.geogebra.com.cn/2014/10/machine-learning-linear-regression</guid>
-      <content:encoded>&lt;![CDATA[<h2 id="section">模型介绍</h2>
-
-<p><img src="/assets/images/2014-10-19-linear_regression_0.png" alt="linear regression" /></p>
-
-<p>线性回归（Linear Regression）的回归函数（hypothesis）为
-\begin{equation}
-h_\theta(x) = \theta^Tx = \theta_0x_0 + \theta_1x_1 + \cdots  + \theta_nx_n
-\label{eq:hypothesis_linear_regression}
-\end{equation}
-其中，常数项$x_0 = 1$。</p>
-
-<p>代价函数（cost function）为
-\begin{equation}
-J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}{\left(h_{\theta}\left(x^{(i)}\right) - y^{(i)}\right)^2}
-\label{eq:cost_function_linear_regression}
-\end{equation}
-其中，$x^{(i)} = \left(x_1^{(i)}, x_2^{(i)}, \cdots, x_n^{(i)}\right)$， $m$为样本数量，$n$为特征数量。</p>
-
-<h2 id="section-1">参数估计</h2>
-
-<p>参数估计是通过最小化代价函数\eqref{eq:cost_function_linear_regression}，求解模型参数$\theta$。
-\[
-\min_\theta J(\theta)
-\]
-通常有两种解法：万能的梯度下降法（gradient descent）和正规方程（normal equation）的解析解（也就是线性回归的最小二乘解）。</p>
-
-<h3 id="section-2">梯度下降法</h3>
-
-<p>repeat until convergence {
-\[
-\theta_j := \theta_j - \alpha\frac{\partial}{\partial\theta_j}J(\theta)~~~~~~(j = 0, 1, \ldots, n)
-\]
-}<br />
-也就是<br />
-repeat until convergence {
-\[
-\theta_j := \theta_j - \alpha\frac{1}{m}\sum_{i=1}^m\left(h_\theta\left(x^{(i)}\right)-y^{(i)}\right)x_j^{(i)}~~~~~~(j = 0, 1, \ldots, n)
-\]
-}  <br />
-每轮循环的时候同时更新$\theta_j$（下图左边为正确更新方式。<em>不能</em>在同一轮循环中，先更新部分$\theta_j$，再利用已更新的$\theta_j$更新其它$\theta_j$）。  <br />
-<img src="/assets/images/2014-10-19-linear_regression_1.png" alt="同时更新$\theta_j$" /> <br />
-特征的尺度如果相差太大，需要进行尺度规范化提高收敛速度，常用的规范化方法是
-\[
-\hat x_i = \frac{x_i - x_{mean}}{x_{max}-x_{min}}
-\]
-或者
-\[
-\hat x_i = \frac{x_i - x_{mean}}{x_{std}}
-\]</p>
-
-<p><strong>注意事项：</strong>   </p>
-
-<ul>
-  <li>线性回归的代价函数$J(\theta)$不存在局部极值（local optima），存在全局极值；</li>
-  <li>将所有特征归一（feature scaling）到统一的尺度$-1\le x_i\le 1$有助于提高梯度下降法的速度（不归一化$x_0$）；</li>
-  <li>学习率$\alpha$太小收敛慢，太大可能错过极值点而不收敛，过大的$\alpha$甚至可能导致$J(\theta)$不降反升；</li>
-  <li>在迭代过程中保持$\alpha$不变，梯度下降步长也会自动减小，因为梯度会不断减小。</li>
-</ul>
-
-<p>尺度归一化效果： <br />
-<img src="/assets/images/2014-10-19-linear_regression_2.png" alt="尺度归一化效果示例" /><br />
-梯度下降步长自动减小：<br />
-<img src="/assets/images/2014-10-19-linear_regression_3.png" alt="梯度下降步长自动减小" /></p>
-
-<h3 id="section-3">正规方程求解</h3>
-
-<p>正规方程求解也就是线性回归的最小二乘解为
-\begin{equation}
-\theta = \left(X^TX\right)^{-1}X^Ty
-\end{equation}</p>
-
-<p><strong>注意事项：</strong>     </p>
-
-<p>$X^TX$可能不可逆，导致的原因可能是冗余特征（redundant features）和特征数目过多（$n$太多而$m$太少），解决的办法：   </p>
-
-<ul>
-  <li>冗余特征线性相关（e.g. $x_1 = 2x_2$）：删除线性相关特征；</li>
-  <li>特征数目过多（e.g. $m \le n$）：删除特征、正则化（regularization）。</li>
-</ul>
-
-<p>Matlab Code：</p>
-
-<div class="highlight"><pre><code class="language-matlab" data-lang="matlab"><span class="n">pinv</span><span class="p">(</span><span class="n">X</span><span class="o">&#39;</span> <span class="o">*</span> <span class="n">X</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="o">&#39;</span> <span class="o">*</span> <span class="n">y</span></code></pre></div>
-
-<p>其中，pinv函数可以处理$X^TX$不可逆的情况，而inv函数不行。</p>
-
-<h3 id="section-4">求解方法比较</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Gradient Descent</th>
-      <th>Normal Equation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>需要$\alpha$</td>
-      <td>不需要$\alpha$</td>
-    </tr>
-    <tr>
-      <td>需要迭代</td>
-      <td>不需要迭代</td>
-    </tr>
-    <tr>
-      <td>当特征数$n$很大时（$10^6$）工作良好</td>
-      <td>$n$很大时很慢</td>
-    </tr>
-    <tr>
-      <td>特征需要尺度规范化</td>
-      <td>特征不需要尺度规范化</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="section-5">多项式回归</h2>
-
-<p>当$x_1 = x, x_2 = x^2, x_3 = x^3, \ldots $时，多项式回归（polynomial regression）\eqref{eq:hypothesis_polynomial_regression}可以直接转化为线性模型\eqref{eq:hypothesis_linear_regression}。
-\begin{equation}
-h_\theta(x) = \theta^Tx = \theta_0x_0 + \theta_1x + \theta_2x^2 ＋ \theta_3x^3 \cdots  + \theta_nx^n
-\label{eq:hypothesis_polynomial_regression}
-\end{equation}</p>
-
-<p><strong>注意事项：</strong> <br />
-构造多项式特征，借助多项式回归，可以利用线性回归模型解决非线性问题。</p>
-
-<h2 id="section-6">思考问题</h2>
-
-<ol>
-  <li>如何通过收敛判断梯度下降法是否应该停止迭代？</li>
-  <li>特征尺度规范化（feature scaling）为何能提高梯度下降法收敛速度？</li>
-  <li>为什么正规方程估计参数不需要特征尺度规范化？</li>
-</ol>
-
-<h2 id="section-7">应用范例</h2>
-
-<h2 id="section-8">参考资料</h2>
-
-<p><a href="https://class.coursera.org/ml-007">Machine Learning （Andrew Ng）</a>    <br />
-<a href="http://en.wikipedia.org/wiki/Linear_regression">Wikipedia: Linear regression</a></p>
-]]&gt;</content:encoded>
-    </item>
-    
-    <item>
-      <title>基于Jekyll的GitHub建站指南</title>
-      <link href="http://www.geogebra.com.cn/2012/07/host-your-pages-at-github-using-jekyll" />
-      <pubdate>2012-07-01T00:00:00+08:00</pubdate>
-      <author>Jide Qian</author>
-      <guid>http://www.geogebra.com.cn/2012/07/host-your-pages-at-github-using-jekyll</guid>
-      <content:encoded>&lt;![CDATA[<p>简介：本文主要介绍利用jekyll在github上搭建站点的方法与原理。</p>
-
-<p><span id="jekyll-and-github"></span></p>
-
-<h2 id="jekyllgithub">jekyll与github的关系</h2>
-
-<p>github站点是位于username.github.com仓库中的静态页面。利用高效的工具生成高质量的静态页面是github建站的王道。<a href="http://jekyllrb.com/">jekyll</a>就是用<a href="http://www.ruby-lang.org/">ruby</a><a href="http://jekyllbootstrap.com/lessons/jekyll-introduction.html">制造静态站点的的ruby解析引擎</a>（构建网站时ruby不是必会的）。github除了能构建独立的站点外，还可以为每个项目建立站点。github提供了<a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">自动</a>和<a href="https://help.github.com/articles/creating-project-pages-manually">手动</a>建立项目站点的方法。</p>
-
-<p>github标配有jekyll解析引擎，上传的站点可以代由github的jekyll解析为静态页面。如果<a href="https://help.github.com/articles/files-that-start-with-an-underscore-are-missing">不需要github用jekyll处理上传的站点文件</a>，可以在根目录下添加一个.nojekyll文件。</p>
-
-<p><a href="https://help.github.com/articles/using-jekyll-with-pages">github使用jekyll的_config.yml</a>和用户本地jekyll的不同，它的功能有限，github运行jekyll带有<code>--safe</code>参数。如果用户本地的jekyll使用了自定义插件，github的解析会出错，启用了本地自定义插件的用户可以上传本地解析好的静态页面到github。</p>
-
-<p>由于本地和gihub的<a href="https://help.github.com/articles/using-jekyll-with-pages">jekyll版本</a>不同，即使本地正常解析的页面也可能会在github上解析出错。下面的表格在github上<code>Jekyll 0.11.0 with Liquid 2.2.2</code>会出错：</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">功能  <span class="p">|</span>   快捷键  <span class="p">|</span>   快捷键  <span class="p">|</span>  功能
--------: <span class="p">|</span> -------: <span class="p">|</span> :------- <span class="p">|</span> :-------
-上一节点  <span class="p">|</span>   <span class="sb">`</span>p<span class="sb">`</span>    <span class="p">|</span>    <span class="sb">`</span>n<span class="sb">`</span>   <span class="p">|</span> 下一节点  
-<span class="o">||</span>    <span class="sb">`</span>m<span class="sb">`</span>   <span class="p">|</span> 菜单</code></pre></div>
-
-<h2 id="jekyll">jekyll驱动网站原理</h2>
-
-<p><a href="http://chen.yanping.me/cn/blog/2011/12/15/building-static-sites-with-jekyll/">用jekyll构建静态网站</a>很容易。模板、数据和美化是jekyll建站的三要素。jekyll自动将数据注入模板，通过美化，得到站点。这里可以看到<a href="https://github.com/mojombo/jekyll/wiki/Sites">一堆用jekyll打造的站点</a>，大部分都可以<code>git clone</code>回来学习参考。<br />
-<!--more--></p>
-
-<h3 id="jekyll-1">jekyll的模板</h3>
-
-<p>jekyll模板就是带有变量的html格式文件。jekyll的模板用<a href="http://liquidmarkup.org/">Liquid</a>语言描述，定义了页面框架。Liquid通过（Output）和标签（Tag）两种标记（markup），即可描述页面的结构，具体可参阅<a href="https://github.com/Shopify/liquid/wiki/Liquid-for-Designers">Liquid for Designers</a>。jekyll对Liquid的标签进行了<a href="https://github.com/mojombo/jekyll/wiki/Liquid-Extensions">扩展</a>。Liquid模板语言对模板数据描述（当然也需要html），生成了站点页面的骨架。Liquid所需要的jekyll的<a href="https://github.com/mojombo/jekyll/wiki/template-data">模板数据</a>在这儿可以找到。除此之外，<a href="https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter">YAML Front Matter</a>定义的变量也可以作为模板数据。</p>
-
-<h3 id="jekyll-2">jekyll的数据</h3>
-
-<p>jekyll的数据是用<a href="http://daringfireball.net/projects/markdown/">markdown</a>、<a href="http://textile.sitemonks.com/">textile</a>等标记语言写的文档。这些格式的文档解析为html格式后，注入jekyll模板的<code>&#123;&#123; content &#125;&#125;</code>，就有了网站的页面。jekyll支持的markdown解析器（将markdown转换为html）有：<span id="markdown"></span><a href="https://github.com/rtomayko/rdiscount/">rdiscount</a>、<a href="http://kramdown.rubyforge.org/">kramdown</a>、<a href="https://github.com/tanoku/redcarpet/">redcarpet</a>、<a href="http://maruku.rubyforge.org/">maruku</a>（jekyll默认）、<a href="http://deveiate.org/projects/BlueCloth/">bluecloth</a>。为了方便处理<script type="math/tex">\LaTeX</script>公式，也有人hack了jekyll，<a href="http://yangzetian.github.com/2012/04/15/jekyll-pandoc/">将pandoc作为markdown的解析器</a>。一个更方便的方法是通过<a href="https://github.com/dsanson/jekyll-pandoc-plugin">jekyll-pandoc-plugin</a>插件，启用pandoc解析器。这些hack后的jekyll启用pandoc当然不会在github上生效，只能用于本机解析后，上传静态页面。</p>
-
-<h3 id="jekyll-3">jekyll的美化</h3>
-
-<p>美化就是用CSS和javascript对html描述的页面进行渲染，美化网页。<a href="http://twitter.github.com/bootstrap/">twitter bootstrap</a>是一套极易上手的页面美化工具。twitter bootstrap还提供了<a href="http://960.gs/">960网格布局</a>，只要按照它约定的方式对页面结构定义、对html标签的<code>class</code>命名，网页的布局美化可谓快又好。</p>
-
-<h2 id="jekyll-bootstrap">在jekyll-bootstrap基础上搭建网站</h2>
-
-<p>jekyll是一套根据相应规程生成网站的工具。如果按照这套法则，从头开始仍然麻烦。<a href="http://jekyllbootstrap.com/">jekyll-bootstrap</a>就是一个jekyll构建站点的demo，并提供了一些<a href="http://jekyllbootstrap.com/api/bootstrap-api.html">额外的api增强jekyll的功能</a>，在此基础上构建站点相当快捷容易。除此之外，<a href="http://octopress.org/">octopress</a>也是基于jekyll上的不错的工具套件。</p>
-
-<h3 id="section">目录结构</h3>
-
-<p>jekyll-bootstrap的<a href="https://github.com/mojombo/jekyll/wiki/usage">目录结构</a>中，只需要将markdown文档放到_posts目录下，<code>jekyll --server</code>（新版采用<code>jekyll serve</code>命令），即可在http://localhost:4000看到页面内容，见<a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html">快速入门示范</a>。_posts中的数据文档，通过注入_layouts定义的模板（_layouts的模板一般指向了_includes/themes中的模板），渲染页面的CSS和JS文档在assets/themes中，一些解析markdown用到的ruby插件放在_plugins目录。通过<code>jekyll --server</code>（新版采用<code>jekyll serve</code>命令）最终生成的静态页面在_sites目录。在更新github上站点的时候，<code>git push</code>可以不必推送_sites目录，将页面的解析留给github，这样做的前提条件是本地未启用自定义插件，_config.yml设置<code>safe = true</code>进行解析。如果本地启用了自定义插件，解析任务就不能交给github做了，上传本地解析好的静态页面到github即可。</p>
-
-<p>jekyll-bootstrap的_includes/JB中有一些常用的工具，用于列表显示、评论等，可参看_includes/themes中主题的相关html文档学习。</p>
-
-<p>_includes/themes中的主题一般包含default.html、post.html和page.html三个文档。default.html定义了网站的最上层框架（模板），post.html和page.html是其子框架（模板）。<a href="http://jekyllbootstrap.com/lessons/jekyll-introduction.html#posts_and_pages">post和page有别</a>；<code>rake page</code>命令生成的页面按page.html解析，markdown文件的<a href="https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter">YAML Front Matter</a>中<code>layout: page</code>；<code>rake post</code>命令生成的页面按post.html解析，markdown文件的<a href="https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter">YAML Front Matter</a>中<code>layout: post</code>。生成好的html子页面通过default.html的<code>&#123;&#123; content &#125;&#125;</code>变量调用，生成整个页面。</p>
-
-<h3 id="section-1">自定义</h3>
-
-<p>站点生成需要用到_config.yml<a href="https://github.com/mojombo/jekyll/wiki/configuration">配置文件</a>，<code>markdown</code>变量定义了解析markdown用的<a href="#markdown">解析器</a>。当然也可自定义变量，比如在<code>JB:</code>下定义一个二级变量<code>RSS_path: /atom.xml</code>（注意缩进）。在html页面中，就可以用<code>&#123;&#123; site.JB.RSS_path &#125;&#125;</code>得其值。<a href="https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter">YAML Front Matter</a>中也可以自定义变量，其中的<code>title</code>变量可以用<code>&#123;&#123; page.title &#125;&#125;</code>访问到。也就是说，站点的全局变量在_config.yml中定义，用<code>site.</code>访问，页面的变量在<a href="https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter">YAML Front Matter</a>中定义，用<code>page.</code>访问，更多的模板变量可参考<a href="https://github.com/mojombo/jekyll/wiki/template-data">模板数据</a>。</p>
-
-<p>_includes/JB中的插件可以在_includes/custom中重新自定义，方法可仿照_includes/JB中的。如果要_includes/custom中的插件生效，需要在_config.yml中将相应的变量设为<code>custom</code>，设置线索可见_includes/JB中的插件。</p>
-
-<h3 id="section-2">小结</h3>
-
-<p><a href="http://jekyllbootstrap.com/lessons/jekyll-introduction.html#how_jekyll_generates_the_final_static_files">jekyll生成静态页面的过程</a>就是先搜集站点的原始数据，通过计算，生成用于页面显示的结构化数据（最终的html静态页面）。结构化数据来源有两方面：一方面是文件中的配置文件，如_config.yml和markdown的<a href="https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter">YAML Front Matter</a>；另一方面通过目录结构和jekyll定义的解析法则，产生数据。站点的全局数据用<code>site.</code>访问，页面数据用<code>page.</code>访问。有了这些结构化的数据后，jekyll再按照用户定义的模板，用相应的结构化数据替换模板中的变量。用户编写的插件是为了计算出满足用户特定需求的数据，但是这些自定义插件不能不github的jekyll解析支持。</p>
-
-<h2 id="jekyll-4">jekyll的装饰部件</h2>
-
-<p>这些装饰部件中，如果本地的jekyll使用了自定义的插件，github的jeklly解析器不会支持这些自定义插件。</p>
-
-<h3 id="section-3">图片与文件</h3>
-
-<p>站点需要的图片直接存放在<code>assets/images</code>文件夹中，可以在_config.yml中定义一个形如<code>img_url: http://jiyeqian.github.com/assets/images</code>的变量，然后在markdown文件需要用到图片的地方插入类似<code>![git代码库结构](&#123;&#123; site.img_url &#125;&#125;/2012-06-27-git-transport.png)</code>的代码即可显示图像。</p>
-
-<p>如果图和文件较多，这里有一些<a href="/2011/09/web-cloud-life/">图片和文件托管的网络资源</a>供参考。</p>
-
-<h3 id="section-4">代码高亮</h3>
-
-<p>网页代码高亮的一般原理是先用JS或其它脚本语言对代码的进行解析，并提根据不同程的序语言提取关键字、变量、常量、注释，然后将代码层次结构用html标签描述，最后用CSS着色。</p>
-
-<p>代码高亮的方案有很多，比如：<a href="https://gist.github.com/1027674">转帖gist代码的插件</a>，<a href="http://google-code-prettify.googlecode.com/svn/trunk/README.html">google-code-prettify</a>，<a href="https://github.com/rsim/blog.rayapps.com/blob/master/_plugins/pygments_cache_patch.rb">利用pygments高亮代码的插件</a>，octopress的<a href="http://octopress.org/docs/plugins/backtick-codeblock/">backtick-codeblock</a>，如果需要在线展示html、js、CSS及其效果，当然还是用<a href="http://octopress.org/docs/plugins/jsfiddle-tag/">jsfiddle插件</a>。</p>
-
-<p>pygments和rouge是github可支持的代码高亮方案(不支持coderay高亮)。利用pygments，须先在_config.yml中设置<code>pygments: true</code>，并嵌入生成的相应CSS到页面的<code>&lt;head&gt;&lt;/head&gt;</code>之中。   </p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pygmentize -S default -f html <span class="p">|</span> sed <span class="s1">&#39;s/^/.highlight code /g&#39;</span> &gt; default.css</code></pre></div>
-
-<p>在pygments的CSS选择器前都加上<code>.highlight code</code>，防止pygments的CSS影响<a href="#mathjax">mathjax</a>公式的CSS。<a href="http://www.stehem.net/2012/02/14/how-to-get-pygments-to-work-with-jekyll.html">pygments也可能会和bootstrap.min.css冲突</a>，需要修改css。上面的<code>pygmentize</code>命令就是pygments代码高亮的效果。代码高亮的highlight标签使用方法<a href="https://github.com/mojombo/jekyll/wiki/Liquid-Extensions">可以参考这里</a>。</p>
-
-<p>另一个比较特殊的代码高亮插件是<a href="http://octopress.org/docs/plugins/include-code/">include-code</a>，可以直接显示目录中的代码文件，在_config.yml中设置好<code>code_dir</code>参数后，直接用<code>&#123;% include_code excerpt.rb %&#125;</code>，即可显示高亮代码（布局可自己定义，代码高亮的CSS可以用pygments的）。<a href="https://gist.github.com/2890453#working-with-code-partials">pygments也支持类似的方法</a>，但效果不太好。</p>
-
-<p><span id="mathjax"></span></p>
-
-<h3 id="latex"><script type="math/tex">\LaTeX</script>公式</h3>
-
-<p>github可支持的<script type="math/tex">\LaTeX</script>方案需要绕过自定义插件，利用类似<a href="http://www.mathjax.org/">mathjax</a>的javascript方案或采用支持<script type="math/tex">\LaTeX</script>的markdown解析器（比如<a href="http://maruku.rubyforge.org/">maruku</a>）。</p>
-
-<p><a href="http://www.mathjax.org/">mathjax</a>通过javascript的方式生成<script type="math/tex">\LaTeX</script>公式可以参考<a href="http://chen.yanping.me/cn/blog/2012/03/10/octopress-with-latex/">在Octopress中使用<script type="math/tex">\LaTeX</script></a>，不过，不必把markdown解析引擎设置为kramdown。当markdown解析引擎为kramdown时，只需要在页面中插入下面这段代码：</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
-
-<p>下面这段代码：</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html">$$ 
-e^x = \sum\_{n=0}^\infty \frac{x^n}{n!} = \lim\_{n\rightarrow\infty} (1+x/n)^n 
-$$</code></pre></div>
-
-<p>显示的效果：
-<script type="math/tex"> 
-e^x = \sum\_{n=0}^\infty \frac{x^n}{n!} = \lim\_{n\rightarrow\infty} (1+x/n)^n 
-</script>
-显示行内公式<script type="math/tex">\alpha + \beta</script>的代码如下：</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html">$$\alpha + \beta$$</code></pre></div>
-
-<p>但是kramdown的解析引擎和转帖gist代码的插件、直接高亮文件中代码的插件include-code有冲突。</p>
-
-<p>利用<a href="https://gist.github.com/834610">mathjax插件</a>定义的新标签，也可插入<script type="math/tex">\LaTeX</script>公式。这段代码<code>&#123;% math %&#125; e&#94;x = \sum\_{n=0}&#94;\infty \frac{x&#94;n}{n!} = \lim\_{n\rightarrow\infty} (1+x/n)&#94;n &#123;% endmath %&#125;</code>也可显示和上面一样的公式，利用标签<code>&#123;% m %&#125; \alpha + \beta &#123;% em %&#125;</code>可显示行内公式<script type="math/tex">\alpha + \beta</script>。mathjax还<a href="http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers">支持公式编号</a>，引用公式\eqref{eq:sample}很方便。</p>
-
-<p>\begin{equation}
-  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
-  \label{eq:sample}
-\end{equation}</p>
-
-<p>另外一些支持<script type="math/tex">\LaTeX</script>公式的方案可参考：Kramdown的<a href="http://kramdown.rubyforge.org/syntax.html#math-blocks">Math Blocks</a>、<a href="http://maruku.rubyforge.org/math.xhtml">Maruku的公式支持</a>。 其他和学术写作相关的插件有：<a href="https://github.com/inukshuk/jekyll-scholar">jekyll-scholar</a>、<a href="https://github.com/archome/jekyll-citation">jekyll-citation</a>、<a href="https://github.com/pablooliveira/bibjekyll">bibjekyll</a>。</p>
-
-<h3 id="section-5">其它</h3>
-
-<p>显示相关文件的插件用<a href="https://github.com/LawrenceWoodman/related_posts-jekyll_plugin">related_posts-jekyll_plugin</a>、<a href="https://github.com/sebcioz/jekyll-only_first_p">只显示第一段</a>的插件，可解析类似wordpress的<code>&lt;!--more--&gt;</code>标记的<a href="https://gist.github.com/986665">excerpt插件</a>，美化引用格式的<a href="http://octopress.org/docs/plugins/blockquote/">blockquote插件</a>。<a href="http://octopress.org/docs/plugins/">octopress的插件</a>可以直接用于jekyll中。</p>
-
-<h3 id="section-6">小结</h3>
-
-<p>要将jekyll的页面托管在github时，推荐尽量不用github之外的插件。代码高亮用pygments，markdown的解析器用kramdown更利于对公式的解析，如果还要其它一些美化，就直接插html代码吧！</p>
-
-<h2 id="jekyll-5">常用的Jekyll变量</h2>
-
-<h2 id="section-7">一些技巧</h2>
-
-<h3 id="gist">直接插入gist代码</h3>
-
-<p>因为markdown的语法可以兼容html，在情非得已的情况下，直接查html代码。如果转帖gist的代码，直接在markdown文件中插入：</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://gist.github.com/834610.js?file=Jekyll nd Octopress Liquid tag for MathJax.rb&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
-
-<p>即可得：
-<script src="https://gist.github.com/834610.js?file=Jekyll nd Octopress Liquid tag for MathJax.rb"></script></p>
-
-<h3 id="section-8">页内跳转</h3>
-
-<p>为了方便页内快速跳转，可建立空内容的锚点。比如
-~~~html
-<span id="jekyll-and-github"></span>
-##jekyll与github的关系
-~~~
-既可用</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html">[回去看看](#jekyll-and-github)</code></pre></div>
-
-<p>实现页内跳转，试试，<a href="#jekyll-and-github">回去看看</a>。如果用的是kramdown解释器，上例中空锚点行下须有一空行。</p>
-
-<h3 id="section-9">表格不断行</h3>
-
-<p>表格某一栏不断行的处理：</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">&quot;white-space:nowrap&quot;</span><span class="nt">&gt;</span>git clone username@host:/path/to/repository<span class="nt">&lt;/span&gt;</span></code></pre></div>
-
-<!---
-点击[到这里看效果]()。
---->
-
-<h3 id="section-10">引用本站其它网页</h3>
-
-<div class="highlight"><pre><code class="language-text" data-lang="text">{% post_url your_markdown_file_name %}</code></pre></div>
-
-]]&gt;</content:encoded>
-    </item>
-    
-    <item>
-      <title>李纯明博士报告安排</title>
-      <link href="http://www.geogebra.com.cn/2012/06/lab-notice" />
-      <pubdate>2012-06-27T00:00:00+08:00</pubdate>
-      <author>Jide Qian</author>
-      <guid>http://www.geogebra.com.cn/2012/06/lab-notice</guid>
-      <content:encoded>&lt;![CDATA[<blockquote>
-
-  <ol>
-    <li>地点在虎溪校区数学与统计学院510；</li>
-    <li>意见和报告相关的交流可在本文后留言。</li>
-  </ol>
-</blockquote>
-
-<h2 id="section">报告1：图像处理中的数学方法</h2>
-<ul>
-  <li>时间：7月2日，星期一 上午10:00  </li>
-  <li>地点：数学与统计学院5楼信息系会议室   </li>
-  <li>摘要：介绍图像处理中的几个重要问题及其数学方法：1. 图像去噪中的Perona-Malik模型，各向异性扩散模型（Anisotropic Diffusion）；2. 图像分割的变分方法；3. 基于光流（Optical Flow）的运动分析及其在图像配准中的应用。这些图像处理问题都可以用类似的变分原理来建模与数值计算。总结图像处理中常用的能量泛函和偏微分方程，及其数值求解过程。 </li>
-</ul>
-
-<p><a href="#leave_a_note">我有话要说⋯⋯</a></p>
-
-<h2 id="section-1">报告2：活动轮廓模型与水平集方法</h2>
-<ul>
-  <li>时间：7月4日，星期三 上午10:00  </li>
-  <li>地点：数学与统计学院5楼信息系会议室  </li>
-  <li>摘要：本报告主要内容包括：1. 经典的参数化活动轮廓模型（Active  Contour Models）；2. 驱动曲线演化的外力，如Gradient Vector Flow；3. 几何活动轮廓模型与水平集方法；4. 基于变分原理的水平集方法；5. 无需重新初始化的变分水平集方法。      </li>
-</ul>
-
-<p><a href="#leave_a_note">我有话要说⋯⋯</a></p>
-
-<h2 id="section-2">报告3：基于区域的图像分割方法与偏移场估计</h2>
-<ul>
-  <li>时间：7月6日，星期五 上午10:00</li>
-  <li>地点：数学与统计学院5楼信息系会议室</li>
-  <li>摘要：本报告先介绍几个经典的基于区域的图像分割模型，包括Mumford-Shah模型与Chan-Vese模型，及其局限性。引入Region-Scalable Fitting模型，通过对分片常量（Piecewise Constant）模型的局部化，克服了经典的基于区域的图像分割模型无法对付intensity inhomogeneity的困难。进一步建立了同时分割与偏移估计的能量极小化模型。    </li>
-</ul>
-
-<p><a href="#leave_a_note">我有话要说⋯⋯</a></p>
-
-<h2 id="section-3">报告4：图像分割的一些新方法</h2>
-<ul>
-  <li>时间：7月9日，星期一 上午10:00  </li>
-  <li>地点：数学与统计学院5楼信息系会议室 </li>
-  <li>摘要：本报告介绍几个最新的图像分割方法，包括全局凸的图像分割模型与Split Bregman，Non-Local Active Contours等；基于Fuzzy C-means的图像分割模型及其推广；医学影像分析中的基于Atlas的图像分割方法。    </li>
-</ul>
-
-<p><a href="#leave_a_note">我有话要说⋯⋯</a></p>
-
-<h2 id="section-4">报告5：时间序列磁共振图像分割</h2>
-<ul>
-  <li>时间：7月11日，星期三 上午10:00  </li>
-  <li>地点：数学与统计学院5楼信息系会议室  </li>
-  <li>摘要：本报告介绍当前医学影像分析中的一个热点问题：时间序列图像的分割。在医学的研究与临床应用中经常需要对同一个病人在不同的时间进行扫描，因此得到一系列的图像（longitudinal images）或四维的图像。对这种时间序列图像的分割既要保证分割结果的连贯性，又能检测出病变和结构性变化，比如脑萎缩。本报告针对磁共振脑成像的应用，提出了一个新的四维图像分割模型，有效地保证了对时间序列图像的分割的连贯性。    </li>
-</ul>
-
-<p><a href="#leave_a_note">我有话要说⋯⋯</a></p>
-
-<h2 id="section-5">李纯明博士介绍</h2>
-
-<blockquote>
-  <p><strong>李纯明，美国康涅狄格大学电子工程博士，复旦大学数学硕士, 福建师范大学数学系本科。2005年至2009年在范德堡大学医学成像科学研究所（Vanderbilt University Institute of Imaging Science）从事博士后研究工作。2009年至今在宾夕法尼亚大学 （University of Pennsylvania） 影像系担任高级研究员，兼任卡内基梅隆大学生物医学工程博士学位论文答辩委员会成员和南京军区总医院客座教授。</strong>    </p>
-</blockquote>
-
-<p>李博士的专长是图像处理、医学影像分析和计算机视觉。以第一作者身份在这些领域的顶级期刊和国际会议上发表了多篇具有高度原创性和广泛国际影响的学术论文。<code>这些论文总共被引用累计1500余次，其中一篇关于水平集方法（Level Set Method）的论文于2005年发表至今已经被引用高达800多次。</code></p>
-
-<p>李博士担任二十余家国际权威专业期刊和顶级国际会议的审稿人及程序委员会委员，包括IEEE Trans. on Image Processing， IEEE Trans. on Medical Imaging， IEEE Trans. on Pattern Analysis and Machine Intelligence， Medical Image Analysis， Medical Physics， Magnetic Resonance Imaging  （MRI）等几乎所有图像处理，计算机视觉和医学影像领域的主流期刊，以及 IEEE International Conference on Computer Vision and Pattern Recognition （CVPR）, International Conference on Computer Vision （ICCV）， Medical Image Computing and Computer Assisted Intervention （MICCAI） 等顶级国际会议。李博士曾应邀到卡内基梅隆大学，俄亥俄州立大学，康涅狄格大学，佛罗里达州立大学，清华大学，复旦大学，重庆大学，南京理工大学，华东师范大学，北京师范大学，电子科技大学，厦门大学，南京军区总医院，江苏省人民医院等国内外大学和医院讲学。
-李博士在图像处理领域的一系列研究成果已被世界各国的诸多科研和工程人员广泛应用于工程（包括计算机视觉与图像处理）、生物、医学等领域的科研和技术开发。李博士所建立的模型在图像处理、医学影像和计算机视觉领域中被广泛采用和深入研究。他的一系列基于水平集的图像分割的模型不仅被大量期刊和会议文章所引用，还被一些研究生教材收录，包括国内的科学出版社出版的《图像处理的偏微分方程方法》，或者被国内外一些大学的研究生课程列为重要参考文献 。李博士在磁共振成像的偏移场校正（MRI bias correction） 等医学成像领域的若干重要课题中也取得了世界领先的研究成果，成功地解决了超高场强的磁共振成像中的偏移场校正的难题。李博士目前的主要从事医学影像分析的技术开发及其临床应用，包括多发性硬化症，各种中枢神经系统疾病的计算机辅助诊断的研究，肿瘤精确定位与测量，手术计划与临床随访等等。<code>李博士开发的基于超声波图像分割的颈动脉内-中膜厚度的测量技术已经被辉瑞（世界最大的制药公司）的全球研发总部采用，并成功地用于治疗动脉硬化的药物开发的临床试验。</code></p>
-
-<p><span id="leave_a_note"></span></p>
 
 ]]&gt;</content:encoded>
     </item>

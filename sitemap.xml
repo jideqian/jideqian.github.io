@@ -2,6 +2,33 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.geogebra.com.cn/2015/06/OpenCV(%E4%B8%80)</loc>
+    
+    <lastmod>2015-06-18T00:00:00+08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.geogebra.com.cn/2015/06/Machine-Learning</loc>
+    
+    <lastmod>2015-06-10T00:00:00+08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.geogebra.com.cn/2015/05/Low-constrast</loc>
+    
+    <lastmod>2015-05-19T00:00:00+08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.geogebra.com.cn/2015/03/LCD</loc>
     
     <lastmod>2015-03-02T00:00:00+08:00</lastmod>
@@ -77,15 +104,6 @@
     <loc>http://www.geogebra.com.cn/2012/07/host-your-pages-at-github-using-jekyll</loc>
     
     <lastmod>2012-07-01T00:00:00+08:00</lastmod>
-    
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.geogebra.com.cn/2012/06/lab-notice</loc>
-    
-    <lastmod>2012-06-27T00:00:00+08:00</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -171,6 +189,8 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  
   
   
   
