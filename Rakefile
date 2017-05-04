@@ -9,7 +9,11 @@ CONFIG = {
   'themes' => File.join(SOURCE, "_includes", "themes"),
   'layouts' => File.join(SOURCE, "_layouts"),
   'posts' => File.join(SOURCE, "_posts"),
+  'rposts' => File.join(SOURCE, "_R"),
+  'pposts' => File.join(SOURCE, "_Python"),
   'post_ext' => "md",
+  'rpost_ext' => "Rmd",
+  'ppost_ext' => "ipynb",
   'theme_package_version' => "0.1.0"
 }
 
@@ -22,7 +26,9 @@ module JB
       :themes => "_includes/themes",
       :theme_assets => "assets/themes",
       :theme_packages => "_theme_packages",
-      :posts => "_posts"
+      :posts => "_posts",
+      :rposts => "_R",
+      :pposts => "_Python"
     }
     
     def self.base
@@ -62,6 +68,37 @@ task :post do
     post.puts "---"
     post.puts "layout: post"
     post.puts "title: \"#{title.gsub(/-/,' ')}\""
+    post.puts "date: #{Time.new.strftime("%Y-%m-%d %H:%M:%S")} +0800"
+    post.puts "categories: \"\""
+    post.puts "tags: []"
+    post.puts "published: true"
+    post.puts "description: \"\""
+    post.puts "---"
+    post.puts ""
+  end
+end # task :post
+
+desc "Begin a new rpost in #{CONFIG['rposts']}"
+task :rpost do
+  abort("rake aborted: '#{CONFIG['rposts']}' directory not found.") unless FileTest.directory?(CONFIG['rposts'])
+  title = ENV["title"] || "new-post"
+  slug = title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+  begin
+    date = (ENV['date'] ? Time.parse(ENV['date']) : Time.now).strftime('%Y-%m-%d')
+  rescue Exception => e
+    puts "Error - date format must be YYYY-MM-DD, please check you typed it correctly!"
+    exit -1
+  end
+  filename = File.join(CONFIG['rposts'], "#{date}-#{slug}.#{CONFIG['rpost_ext']}")
+  if File.exist?(filename)
+    abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
+  end
+  
+  puts "Creating new rpost: #{filename}"
+  open(filename, 'w') do |post|
+    post.puts "---"
+    post.puts "layout: post"
+    post.puts "title: \"#{title.gsub(/-/,' ')}\""
     post.puts "categories: \"\""
     post.puts "tags: []"
     post.puts "date: #{Time.new.strftime("%Y-%m-%d %H:%M:%S")}"
@@ -70,7 +107,43 @@ task :post do
     post.puts "---"
     post.puts ""
   end
-end # task :post
+end # task :rpost
+
+desc "Begin a new ppost in #{CONFIG['pposts']}"
+task :ppost do
+  abort("rake aborted: '#{CONFIG['pposts']}' directory not found.") unless FileTest.directory?(CONFIG['rposts'])
+  title = ENV["title"] || "new-post"
+  slug = title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+  begin
+    date = (ENV['date'] ? Time.parse(ENV['date']) : Time.now).strftime('%Y-%m-%d')
+  rescue Exception => e
+    puts "Error - date format must be YYYY-MM-DD, please check you typed it correctly!"
+    exit -1
+  end
+  filename = File.join(CONFIG['pposts'], "#{date}-#{slug}.#{CONFIG['ppost_ext']}")
+  if File.exist?(filename)
+    abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
+  end
+  
+  require 'fileutils'
+  template_file = File.join(CONFIG['pposts'], "template.ipynbt")
+  puts "Creating new ppost: #{filename}"
+  FileUtils.copy_file(template_file, filename)
+  # File.copy template_file, filename
+  # system("copy #{template_file} #{filename}")
+  # open(filename, 'w') do |post|
+  #   post.puts "---"
+  #   post.puts "layout: post"
+  #   post.puts "title: \"#{title.gsub(/-/,' ')}\""
+  #   post.puts "categories: \"\""
+  #   post.puts "tags: []"
+  #   post.puts "date: #{Time.new.strftime("%Y-%m-%d %H:%M:%S")}"
+  #   post.puts "published: true"
+  #   post.puts "description: \"\""
+  #   post.puts "---"
+  #   post.puts ""
+  # end
+end # task :ppost
 
 # Usage: rake page name="about.html"
 # You can also specify a sub-directory path.
