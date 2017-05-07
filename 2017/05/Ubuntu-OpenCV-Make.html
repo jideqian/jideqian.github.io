@@ -180,7 +180,8 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 <p>除了图片之外，OpenCV还要处理视频文件。使用下面命令安装一些视频编解码库：</p>
 
 <div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-<span class="nv">$ </span>sudo apt-get install libxvidcore-dev libx264-dev</code></pre></div>
+<span class="nv">$ </span>sudo apt-get install libxvidcore-dev libx264-dev
+<span class="nv">$ </span>sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev</code></pre></div>
 <p>OpenCV的GUI模块highgui依赖Gtk。安装gtk库：</p>
 
 <div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get install libgtk-3-dev</code></pre></div>
@@ -254,6 +255,7 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     -D <span class="nv">CMAKE_INSTALL_PREFIX</span><span class="o">=</span>/usr/local <span class="se">\</span>
     -D <span class="nv">INSTALL_PYTHON_EXAMPLES</span><span class="o">=</span>ON <span class="se">\</span>
     -D <span class="nv">INSTALL_C_EXAMPLES</span><span class="o">=</span>OFF <span class="se">\</span>
+    -D <span class="nv">WITH_GSTREAMER_0_10</span><span class="o">=</span>OFF <span class="se">\ </span><span class="c">#opencv 3.0 以上版本默认开启Gstreamer 1.0，关闭0.10 版本</span>
     -D <span class="nv">OPENCV_EXTRA_MODULES_PATH</span><span class="o">=</span>~/opencv_contrib-3.1.0/modules <span class="se">\</span>
     -D <span class="nv">PYTHON_EXECUTABLE</span><span class="o">=</span>~/.virtualenvs/cv<span class="o">[</span>2/3<span class="o">]</span>/bin/python <span class="se">\ </span> <span class="c"># 使用cv2或cv3替换cv[2/3]</span>
     -D <span class="nv">BUILD_EXAMPLES</span><span class="o">=</span>ON ..  <span class="c"># 我在编译例子时遇到错误，把它改为OFF通过</span></code></pre></div>
