@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Jide Qian" />
+    <title>Ubuntu OpenCV 编译</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link href="/feed/" rel="alternate" title="Jide Qian" type="application/atom+xml" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/pygments/default.css" />
+    <link rel="stylesheet" href="/assets/css/pygments/default_inline.css" />
+    <link rel="stylesheet" href="/assets/css/coderay.css" />
+    <link rel="stylesheet" href="/assets/css/twemoji-awesome.css" />  
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="/assets/css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+    <link href="/assets/css/ggvis.css" rel="stylesheet" />
+    <link href="/assets/css/mermaid.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/markdown-plus.css"/> 
+    <link rel="stylesheet" href="/assets/css/flexslider.css" type="text/css" media="screen" />
+      <style type="text/css">
+        .flex-caption {
+          width: 96%;
+          padding: 2%;
+          left: 0;
+          bottom: 0;
+          background: rgba(0,0,0,.5);
+          color: #fff;
+          text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+          font-size: 14px;
+          line-height: 18px;
+        }
+        li.css a {
+          border-radius: 0;
+        }
+      </style>
+
+    <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script type="text/javascript" src="/assets/js/d3.min.js"></script>
+    <script type="text/javascript" src="/assets/js/vega.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lodash.min.js"></script>
+    <script>var lodash = _.noConflict();</script>
+    <script type="text/javascript" src="/assets/js/ggvis.js"></script>
+    <script type="text/javascript" src="/assets/js/htmlwidgets.js"></script>
+    <script type="text/javascript" src="/assets/js/echarts-all.js"></script>
+    <script type="text/javascript" src="/assets/js/echarts.js"></script>
+    <script defer src="/assets/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript">
+      // $(function(){
+      //   SyntaxHighlighter.all();
+      // });
+      $(window).load(function(){
+        $('.flexslider').flexslider({
+          animation: "slide",
+          start: function(slider){
+            $('body').removeClass('loading');
+          }
+        });
+      });
+    </script>
+
+    <script type="text/javascript">
+      function setTimeSpan(){
+        var date = new Date();
+        timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+      }
+
+      Date.prototype.format = function(format)
+      {
+        var o =
+        {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+        }
+        if(/(y+)/.test(format))
+          format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+        for(var k in o)
+          if(new RegExp("("+ k +")").test(format))
+            format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+          return format;
+        }
+      </script>
+
+    <!-- MathJax for LaTeX -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { extensions: ["handle-floats.js"] },
+        TeX: { equationNumbers: { autoNumber: "AMS" } },
+        tex2jax: {
+            inlineMath: [['$$$', '$$$'], ['$', '$'], ['\\(', '\\)']],
+            processEscapes: true
+        }
+    });
+    </script>
+    <!-- <script type="text/javascript" src="/assets/js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+  <!-- <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0b514f17fd99b9fb4be74c94bdd2b7db' type='text/javascript'%3E%3C/script%3E"));
+</script>
+ -->
+  </head>
+<!--  <body>
+-->
+
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>Ubuntu OpenCV 编译</h1>
+        </header>
+        <nav id="real_nav">
+        
+          <span><a title="Home" href="/">Home</a></span>
+        
+          <span><a title="Categories" href="/categories/">Categories</a></span>
+        
+          <span><a title="Tags" href="/tags/">Tags</a></span>
+        
+          <span><a title="About" href="/about/">About</a></span>
+        
+          <span><a title="Search" href="/search/">Search</a></span>
+        
+        </nav>
+        <article class="content">
+        <script type="text/javascript" src="/assets/js/outliner.js"></script>
+
+<section class="meta">
+<span class="time">
+  <time datetime="2017-05-07">2017-05-07</time>
+</span>
+
+ |
+<span class="categories">
+  <i class="fa fa-share-alt"></i>
+  
+  <a href="/categories/#工具" title="工具">工具</a>&nbsp;
+  
+</span>
+
+
+ |
+<span class="tags">
+  <i class="fa fa-tags"></i>
+  
+  <a href="/tags/#OpenCV" title="OpenCV">OpenCV</a>&nbsp;
+  
+  <a href="/tags/#Ubuntu" title="Ubuntu">Ubuntu</a>&nbsp;
+  
+  <a href="/tags/#virtualenvs" title="virtualenvs">virtualenvs</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="post">
+<h2 id="section">安装环境</h2>
+<ul>
+  <li>OS:Ubuntu 16.04</li>
+  <li>OpenCV 3.1.0</li>
+</ul>
+
+<h2 id="opencv">安装OpenCV依赖</h2>
+
+<p>升级系统：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get update
+<span class="nv">$ </span>sudo apt-get upgrade</code></pre></div>
+<p>安装基本编译工具：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get install build-essential cmake pkg-</code></pre></div>
+<p>由于OpenCV是计算机视觉库，总需要加载一些图像文件（ JPEG, PNG, TIFF）。使用下面命令安装一些必要的图像库：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get install libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev</code></pre></div>
+<p>除了图片之外，OpenCV还要处理视频文件。使用下面命令安装一些视频编解码库：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+<span class="nv">$ </span>sudo apt-get install libxvidcore-dev libx264-dev</code></pre></div>
+<p>OpenCV的GUI模块highgui依赖Gtk。安装gtk库：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get install libgtk-3-dev</code></pre></div>
+<p>下面安装一些可以提高OpenCV性能的库，如矩阵操作：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get install libatlas-base-dev gfortran</code></pre></div>
+<p>安装Python2和Python3的开发库：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get install python2.7-dev python3.5-dev</code></pre></div>
+
+<h2 id="opencv-1">下载OpenCV源码</h2>
+
+<p>目前OpenCV的最新稳定版是3.1.0，你可以去Github OpenCV项目主页查看最新版本。</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="nv">$ </span>wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
+<span class="nv">$ </span>unzip opencv.zip</code></pre></div>
+<p>下载和OpenCV版本对应的opencv_contrib（一些扩展功能和non-free代码）：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
+<span class="nv">$ </span>unzip opencv_contrib.zip</code></pre></div>
+<p>注意：opencv和opencv_contrib的版本要一致。</p>
+
+<h2 id="python">创建Python虚拟环境</h2>
+
+<p>虚拟环境可以保持Python开发环境的干净整洁，强烈建议使用虚拟环境。</p>
+
+<p>首先安装pip：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>wget https://bootstrap.pypa.io/get-pip.py
+<span class="nv">$ </span>sudo python get-pip.py
+<span class="nv">$ </span>rm get-pip.py</code></pre></div>
+<p>Python虚拟环境（pyvenv、virtualenv）
+安装virtualenv：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo pip install virtualenv virtualenvwrapper</code></pre></div>
+<p>在~/.bashrc文件中添加如下环境变量：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nb">export </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+<span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh</code></pre></div>
+<p>使环境变量生效：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span><span class="nb">source</span> ~/.bashrc</code></pre></div>
+
+<p>创建Python虚拟环境：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>mkvirtualenv cv2 -p python2  <span class="c"># python 2</span>
+<span class="nv">$ </span>mkvirtualenv cv3 -p python3  <span class="c"># python 3</span></code></pre></div>
+<p>Ubuntu 16.04编译安装OpenCV（Python）</p>
+
+<p>切换工作目录：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>workon cv2/cv3</code></pre></div>
+<p>Ubuntu 16.04编译安装OpenCV（Python）</p>
+
+<p>分别在cv2、cv3虚拟环境安装numpy：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>pip install numpy</code></pre></div>
+
+<h2 id="opencv-2">编译OpenCV</h2>
+
+<p>激活要安装的Python虚拟环境：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>workon cv<span class="o">[</span>2/3<span class="o">]</span>  <span class="c"># Python2-&gt;cv2  Python3-&gt;cv3</span></code></pre></div>
+<p>编辑OpenCV：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span><span class="nb">cd</span> ~/opencv-3.1.0/
+<span class="nv">$ </span>mkdir build
+<span class="nv">$ </span><span class="nb">cd </span>build
+<span class="nv">$ </span>cmake -D <span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>RELEASE <span class="se">\</span>
+    -D <span class="nv">CMAKE_INSTALL_PREFIX</span><span class="o">=</span>/usr/local <span class="se">\</span>
+    -D <span class="nv">INSTALL_PYTHON_EXAMPLES</span><span class="o">=</span>ON <span class="se">\</span>
+    -D <span class="nv">INSTALL_C_EXAMPLES</span><span class="o">=</span>OFF <span class="se">\</span>
+    -D <span class="nv">OPENCV_EXTRA_MODULES_PATH</span><span class="o">=</span>~/opencv_contrib-3.1.0/modules <span class="se">\</span>
+    -D <span class="nv">PYTHON_EXECUTABLE</span><span class="o">=</span>~/.virtualenvs/cv<span class="o">[</span>2/3<span class="o">]</span>/bin/python <span class="se">\ </span> <span class="c"># 使用cv2或cv3替换cv[2/3]</span>
+    -D <span class="nv">BUILD_EXAMPLES</span><span class="o">=</span>ON ..  <span class="c"># 我在编译例子时遇到错误，把它改为OFF通过</span></code></pre></div>
+<p>编译：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>make</code></pre></div>
+<p>安装：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo make install
+<span class="nv">$ </span>sudo ldconfig</code></pre></div>
+
+<h2 id="opencv-3">完成OpenCV的安装</h2>
+
+<p>Python 2.7：</p>
+
+<p>OpenCV模块位于/usr/local/lib/python-2.7/site-packages/目录。</p>
+
+<p>Ubuntu 16.04编译安装OpenCV（Python）</p>
+
+<p>创建链接：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span><span class="nb">cd</span> ~/.virtualenvs/cv2/lib/python2.7/site-packages/
+<span class="nv">$ </span>ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so</code></pre></div>
+<p>Python 3.5：</p>
+
+<p>OpenCV模块位于/usr/local/lib/python3.5/site-packages/目录。</p>
+
+<p>为Python3编译的模块名字不是cv.so，而是cv2.cpython-35m-x86_64-linux-gnu.so，系统不同名字也不同。重命名：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span><span class="nb">cd</span> /usr/local/lib/python3.5/site-packages/
+<span class="nv">$ </span>sudo mv cv2.cpython-35m-x86_64-linux-gnu.so cv2.so</code></pre></div>
+<p>创建链接：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span><span class="nb">cd</span> ~/.virtualenvs/cv/lib/python3.5/site-packages/
+<span class="nv">$ </span>ln -s /usr/local/lib/python3.5/site-packages/cv2.so cv2.so</code></pre></div>
+<p>测试安装：</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="nv">$ </span>workon cv3／cv2
+<span class="nv">$ </span>python
+Python 3.5.2 <span class="o">(</span>default, Jul  <span class="m">5</span> 2016, 12:43:10<span class="o">)</span> 
+<span class="o">[</span>GCC 5.4.0 20160609<span class="o">]</span> on linux
+Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
+&gt;&gt;&gt; import cv2
+&gt;&gt;&gt; cv2.__version__
+<span class="s1">&#39;3.1.0&#39;</span>
+&gt;&gt;&gt;</code></pre></div>
+<p>安装完成。</p>
+
+
+</section>
+<section align="left">
+<p></p>
+<hr>
+  <p><img/ src="/assets/images/alipay2me.png" alt="打赏作者" style="height: 160px"></p>
+  <p></p>
+<hr>
+  <ul>
+    
+    <li class="pageNav">2016-10-24 &raquo; <a href="/2016/10/nnml-bp-learning">NNML（03）：BP 学习</a></li>
+    
+    <li class="pageNav">2016-10-16 &raquo; <a href="/2016/10/nnml-perceptron-learning">NNML（02）：感知器学习</a></li>
+    
+    <li class="pageNav">2016-10-09 &raquo; <a href="/2016/10/s13000-model">鲁棒及自适应控制（2）：模型</a></li>
+    
+  </ul>
+<p></p>
+<span>
+  <a  href="/2016/10/nnml-bp-learning" class="pageNav" style="float:left"   >上一篇：NNML（03）：BP 学习 </a>
+  &nbsp;&nbsp;&nbsp;
+  <a   class="pageNavInvalid" style="float:right"  >下一篇</a>  
+</span>
+</section>
+
+	<script type="text/javascript">
+	var first_image = document.getElementsByClassName("post")[0].getElementsByTagName("img")[0]; 
+	if (first_image != undefined) {
+	document.getElementsByClassName("ds-thread")[0].setAttribute("data-image", first_image.src);
+	}
+	</script>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"jideqian"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<ul class="ds-recent-visitors" data-num-items="16"></ul>
+	<div class="ds-thread"  data-thread-key="/2017/05/Ubuntu-OpenCV-Make" 	data-url="http://www.geogebra.com.cn/2017/05/Ubuntu-OpenCV-Make" data-title="Ubuntu OpenCV 编译">
+	</div>	
+
+
+<!-- <script type="text/javascript"> -->
+<!-- $(function(){ -->
+<!--   $(document).keydown(function(e) { -->
+<!--     var url = false; -->
+<!--         if (e.which == 37 || e.which == 72) {  // Left arrow and H -->
+<!--          -->
+<!--         url = '/2016/10/nnml-bp-learning'; -->
+<!--          -->
+<!--         } -->
+<!--         else if (e.which == 39 || e.which == 76) {  // Right arrow and L -->
+<!--          -->
+<!--         } else if (e.which == 75) {  // K -->
+<!--           url = '#'; -->
+<!--         } else if (e.which == 74) { // J -->
+<!--         url = '/2017/05/Ubuntu-OpenCV-Make/#timeSpan'; -->
+<!--         } -->
+<!--         if (url) { -->
+<!--             window.location = url; -->
+<!--         } -->
+<!--   }); -->
+<!-- }) -->
+<!-- </script> -->
+
+        </article>
+      </div>
+
+    <footer>
+        <p><small>
+            Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a> | Copyright 2014 - 2017 by <a href="/about/">Jiye Qian</a> | <span class="label label-info" id="timeSpan"></span></small></p>
+    </footer>
+
+    </div>
+  </body>
+</html>
