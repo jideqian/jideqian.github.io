@@ -159,115 +159,195 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
 </section>
 <section class="post">
-<h2 id="section">安装环境</h2>
+<h2 id="安装环境">安装环境</h2>
 <ul>
   <li>OS:Ubuntu 16.04</li>
   <li>OpenCV 3.1.0</li>
 </ul>
 
-<h2 id="opencv">安装OpenCV依赖</h2>
+<h2 id="安装opencv依赖">安装OpenCV依赖</h2>
 
 <p>升级系统：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get update
-<span class="nv">$ </span>sudo apt-get upgrade</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ sudo apt-get update
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>$ sudo apt-get upgrade
+</pre></div>
+</div>
+</div>
 <p>安装基本编译工具：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get install build-essential cmake pkg-</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ sudo apt-get install build-essential cmake pkg-
+</pre></div>
+</div>
+</div>
 <p>由于OpenCV是计算机视觉库，总需要加载一些图像文件（ JPEG, PNG, TIFF）。使用下面命令安装一些必要的图像库：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get install libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ sudo apt-get install libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev
+</pre></div>
+</div>
+</div>
 <p>除了图片之外，OpenCV还要处理视频文件。使用下面命令安装一些视频编解码库：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-<span class="nv">$ </span>sudo apt-get install libxvidcore-dev libx264-dev
-<span class="nv">$ </span>sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>$ sudo apt-get install libxvidcore-dev libx264-dev
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>$ sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+</pre></div>
+</div>
+</div>
 <p>OpenCV的GUI模块highgui依赖Gtk。安装gtk库：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get install libgtk-3-dev</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ sudo apt-get install libgtk-3-dev
+</pre></div>
+</div>
+</div>
 <p>下面安装一些可以提高OpenCV性能的库，如矩阵操作：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get install libatlas-base-dev gfortran</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ sudo apt-get install libatlas-base-dev gfortran
+</pre></div>
+</div>
+</div>
 <p>安装Python2和Python3的开发库：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo apt-get install python2.7-dev python3.5-dev</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ sudo apt-get install python2.7-dev python3.5-dev
+</pre></div>
+</div>
+</div>
 
-<h2 id="opencv-1">下载OpenCV源码</h2>
+<h2 id="下载opencv源码">下载OpenCV源码</h2>
 
 <p>目前OpenCV的最新稳定版是3.1.0，你可以去Github OpenCV项目主页查看最新版本。</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span><span class="nb">cd</span> ~
-<span class="nv">$ </span>wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
-<span class="nv">$ </span>unzip opencv.zip</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ cd ~
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>$ wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>$ unzip opencv.zip
+</pre></div>
+</div>
+</div>
 <p>下载和OpenCV版本对应的opencv_contrib（一些扩展功能和non-free代码）：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
-<span class="nv">$ </span>unzip opencv_contrib.zip</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>$ unzip opencv_contrib.zip
+</pre></div>
+</div>
+</div>
 <p>注意：opencv和opencv_contrib的版本要一致。</p>
 
-<h2 id="python">创建Python虚拟环境</h2>
+<h2 id="创建python虚拟环境">创建Python虚拟环境</h2>
 
 <p>虚拟环境可以保持Python开发环境的干净整洁，强烈建议使用虚拟环境。</p>
 
 <p>首先安装pip：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>wget https://bootstrap.pypa.io/get-pip.py
-<span class="nv">$ </span>sudo python get-pip.py
-<span class="nv">$ </span>rm get-pip.py</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ wget https://bootstrap.pypa.io/get-pip.py
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>$ sudo python get-pip.py
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>$ rm get-pip.py
+</pre></div>
+</div>
+</div>
 <p>Python虚拟环境（pyvenv、virtualenv）
 安装virtualenv：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo pip install virtualenv virtualenvwrapper</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ sudo pip install virtualenv virtualenvwrapper
+</pre></div>
+</div>
+</div>
 <p>在~/.bashrc文件中添加如下环境变量：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nb">export </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
-<span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>export WORKON_HOME=$HOME/.virtualenvs
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>source /usr/local/bin/virtualenvwrapper.sh
+</pre></div>
+</div>
+</div>
 <p>使环境变量生效：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span><span class="nb">source</span> ~/.bashrc</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ source ~/.bashrc
+</pre></div>
+</div>
+</div>
 
 <p>创建Python虚拟环境：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>mkvirtualenv cv2 -p python2  <span class="c"># python 2</span>
-<span class="nv">$ </span>mkvirtualenv cv3 -p python3  <span class="c"># python 3</span></code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ mkvirtualenv cv2 -p python2  # python 2
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>$ mkvirtualenv cv3 -p python3  # python 3
+</pre></div>
+</div>
+</div>
 <p>Ubuntu 16.04编译安装OpenCV（Python）</p>
 
 <p>切换工作目录：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>workon cv2/cv3</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ workon cv2/cv3
+</pre></div>
+</div>
+</div>
 <p>Ubuntu 16.04编译安装OpenCV（Python）</p>
 
 <p>分别在cv2、cv3虚拟环境安装numpy：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>pip install numpy</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ pip install numpy
+</pre></div>
+</div>
+</div>
 
-<h2 id="opencv-2">编译OpenCV</h2>
+<h2 id="编译opencv">编译OpenCV</h2>
 
 <p>激活要安装的Python虚拟环境：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>workon cv<span class="o">[</span>2/3<span class="o">]</span>  <span class="c"># Python2-&gt;cv2  Python3-&gt;cv3</span></code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ workon cv[2/3]  # Python2-&gt;cv2  Python3-&gt;cv3
+</pre></div>
+</div>
+</div>
 <p>编辑OpenCV：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span><span class="nb">cd</span> ~/opencv-3.1.0/
-<span class="nv">$ </span>mkdir build
-<span class="nv">$ </span><span class="nb">cd </span>build
-<span class="nv">$ </span>cmake -D <span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>RELEASE <span class="se">\</span>
-    -D <span class="nv">CMAKE_INSTALL_PREFIX</span><span class="o">=</span>/usr/local <span class="se">\</span>
-    -D <span class="nv">INSTALL_PYTHON_EXAMPLES</span><span class="o">=</span>ON <span class="se">\</span>
-    -D <span class="nv">INSTALL_C_EXAMPLES</span><span class="o">=</span>OFF <span class="se">\</span>
-    -D <span class="nv">WITH_GSTREAMER_0_10</span><span class="o">=</span>OFF <span class="se">\ </span><span class="c">#opencv 3.0 以上版本默认开启Gstreamer 1.0，关闭0.10 版本</span>
-    -D <span class="nv">OPENCV_EXTRA_MODULES_PATH</span><span class="o">=</span>~/opencv_contrib-3.1.0/modules <span class="se">\</span>
-    -D <span class="nv">PYTHON_EXECUTABLE</span><span class="o">=</span>~/.virtualenvs/cv<span class="o">[</span>2/3<span class="o">]</span>/bin/python <span class="se">\ </span> <span class="c"># 使用cv2或cv3替换cv[2/3]</span>
-    -D <span class="nv">BUILD_EXAMPLES</span><span class="o">=</span>ON ..  <span class="c"># 我在编译例子时遇到错误，把它改为OFF通过</span></code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>$ cd ~/opencv-3.1.0/
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>$ mkdir build
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>$ cd build
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>$ cmake -D CMAKE_BUILD_TYPE=RELEASE \
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    -D CMAKE_INSTALL_PREFIX=/usr/local \
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    -D INSTALL_PYTHON_EXAMPLES=ON \
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    -D INSTALL_C_EXAMPLES=OFF \
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    -D WITH_GSTREAMER_0_10=OFF \ #opencv 3.0 以上版本默认开启Gstreamer 1.0，关闭0.10 版本
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules \
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    -D PYTHON_EXECUTABLE=~/.virtualenvs/cv[2/3]/bin/python \  # 使用cv2或cv3替换cv[2/3]
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>    -D BUILD_EXAMPLES=ON ..  # 我在编译例子时遇到错误，把它改为OFF通过
+</pre></div>
+</div>
+</div>
 <p>编译：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>make</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ make
+</pre></div>
+</div>
+</div>
 <p>安装：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span>sudo make install
-<span class="nv">$ </span>sudo ldconfig</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ sudo make install
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>$ sudo ldconfig
+</pre></div>
+</div>
+</div>
 
-<h2 id="opencv-3">完成OpenCV的安装</h2>
+<h2 id="完成opencv的安装">完成OpenCV的安装</h2>
 
 <p>Python 2.7：</p>
 
@@ -277,32 +357,48 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
 <p>创建链接：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span><span class="nb">cd</span> ~/.virtualenvs/cv2/lib/python2.7/site-packages/
-<span class="nv">$ </span>ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ cd ~/.virtualenvs/cv2/lib/python2.7/site-packages/
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>$ ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so
+</pre></div>
+</div>
+</div>
 <p>Python 3.5：</p>
 
 <p>OpenCV模块位于/usr/local/lib/python3.5/site-packages/目录。</p>
 
 <p>为Python3编译的模块名字不是cv.so，而是cv2.cpython-35m-x86_64-linux-gnu.so，系统不同名字也不同。重命名：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span><span class="nb">cd</span> /usr/local/lib/python3.5/site-packages/
-<span class="nv">$ </span>sudo mv cv2.cpython-35m-x86_64-linux-gnu.so cv2.so</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ cd /usr/local/lib/python3.5/site-packages/
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>$ sudo mv cv2.cpython-35m-x86_64-linux-gnu.so cv2.so
+</pre></div>
+</div>
+</div>
 <p>创建链接：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span><span class="nb">cd</span> ~/.virtualenvs/cv/lib/python3.5/site-packages/
-<span class="nv">$ </span>ln -s /usr/local/lib/python3.5/site-packages/cv2.so cv2.so</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ cd ~/.virtualenvs/cv/lib/python3.5/site-packages/
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>$ ln -s /usr/local/lib/python3.5/site-packages/cv2.so cv2.so
+</pre></div>
+</div>
+</div>
 <p>测试安装：</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nv">$ </span><span class="nb">cd</span> ~
-<span class="nv">$ </span>workon cv3／cv2
-<span class="nv">$ </span>python
-Python 3.5.2 <span class="o">(</span>default, Jul  <span class="m">5</span> 2016, 12:43:10<span class="o">)</span> 
-<span class="o">[</span>GCC 5.4.0 20160609<span class="o">]</span> on linux
-Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
-&gt;&gt;&gt; import cv2
-&gt;&gt;&gt; cv2.__version__
-<span class="s1">&#39;3.1.0&#39;</span>
-&gt;&gt;&gt;</code></pre></div>
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>$ cd ~
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>$ workon cv3／cv2
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>$ python
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>Python 3.5.2 (default, Jul  5 2016, 12:43:10) 
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>[GCC 5.4.0 20160609] on linux
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>&gt;&gt;&gt; import cv2
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>&gt;&gt;&gt; cv2.__version__
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>'3.1.0'
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>&gt;&gt;&gt;
+</pre></div>
+</div>
+</div>
 <p>安装完成。</p>
 
 
@@ -380,7 +476,7 @@ Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&
 
     <footer>
         <p><small>
-            Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a> | Copyright 2014 - 2017 by <a href="/about/">Jiye Qian</a> | <span class="label label-info" id="timeSpan"></span></small></p>
+            Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a> | Copyright 2014 - 2018 by <a href="/about/">Jiye Qian</a> | <span class="label label-info" id="timeSpan"></span></small></p>
     </footer>
 
     </div>
